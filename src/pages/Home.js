@@ -37,14 +37,14 @@ const Home = () => {
   const quickFacts = [
     { icon: Trophy, text: 'USACO Gold', color: '#EAB308' },
     { icon: Target, text: 'AIME Qualifier', color: '#3B82F6' },
-    { icon: Code, text: 'Google Code Jam', color: '#10B981' },
+    { icon: Code, text: 'DubHacks', color: '#10B981' },
     { icon: Star, text: '#56 US Debater', color: '#EF4444' }
   ];
 
   const featuredProjects = [
     {
       title: 'LearnOlympiad SaaS',
-      description: '500+ active users',
+      description: '50+ active users',
       icon: Sparkles,
       link: 'https://learnolympiad.com',
       color: '#06b6d4'
@@ -56,9 +56,10 @@ const Home = () => {
       color: '#a855f7'
     },
     {
-      title: 'Veritas',
+      title: 'Verity',
       description: 'Fact-Checking AI',
       icon: Target,
+      link: 'https://devpost.com/software/verity-isrt5e?ref_content=my-projects-tab&ref_feature=my_projects',
       color: '#10b981'
     }
   ];

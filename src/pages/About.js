@@ -5,6 +5,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('experience');
   const [hoveredSkill, setHoveredSkill] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,17 +26,20 @@ const About = () => {
       description: 'Investigating computational models of neural networks and brain-inspired machine learning architectures. Focus on understanding how biological neural systems process information and applying those insights to artificial intelligence.',
       skills: ['PyTorch', 'Neuroscience', 'Deep Learning', 'Python', 'Research Methods'],
       icon: Brain,
-      color: '#06b6d4'
+      color: '#06b6d4',
+      // Add your image URL here
+      image: '/images/NeuralLab.png' // Replace with your actual image path
     },
     {
       title: 'Technical Consultant',
       org: 'Target',
       period: '2025 Jul - 2025 Sep',
-      type: 'Research',
+      type: 'Hardware',
       description: 'Investigating computational models of neural networks and brain-inspired machine learning architectures. Focus on understanding how biological neural systems process information and applying those insights to artificial intelligence.',
-      skills: ['PyTorch', 'Neuroscience', 'Deep Learning', 'Python', 'Research Methods'],
+      skills: ['PyTorch', 'Neuroscience', 'Deep Learning', 'Troubleshooting', 'Communication'],
       icon: Brain,
-      color: '#d60d0dff'
+      color: '#d60d0dff',
+      image: '/images/target.jpg' // Replace with your actual image path
     },
     {
       title: 'Quantitative Research',
@@ -45,7 +49,8 @@ const About = () => {
       description: 'Developing algorithmic trading strategies and financial models using statistical analysis and machine learning. Implemented backtesting frameworks and analyzed market microstructure.',
       skills: ['Python', 'Statistics', 'Finance', 'ML', 'Pandas', 'NumPy'],
       icon: TrendingUp,
-      color: '#a855f7'
+      color: '#a855f7',
+      image: '/images/quantresearch.png' // Replace with your actual image path
     },
     {
       title: 'Software Developer and Co-founder',
@@ -55,7 +60,8 @@ const About = () => {
       description: 'Developing algorithmic trading strategies and financial models using statistical analysis and machine learning. Implemented backtesting frameworks and analyzed market microstructure.',
       skills: ['Python', 'Statistics', 'Finance', 'ML', 'Pandas', 'NumPy'],
       icon: TrendingUp,
-      color: '#a855f7'
+      color: '#a855f7',
+      image: '/images/skilltrees.png' // Replace with your actual image path
     },
     {
       title: 'Computer Science Student',
@@ -65,7 +71,8 @@ const About = () => {
       description: 'Pursuing B.S. in Computer Science with focus on artificial intelligence, algorithms, and systems. Relevant coursework: Data Structures, Algorithms, Machine Learning, Computer Systems.',
       skills: ['CS Theory', 'Algorithms', 'Systems', 'AI/ML'],
       icon: GraduationCap,
-      color: '#10b981'
+      color: '#10b981',
+      image: '/images/uw-logo.png' // Replace with your actual image path
     }
   ];
 
@@ -79,7 +86,9 @@ const About = () => {
       status: 'Live',
       icon: Sparkles,
       highlights: ['500+ users', 'AI tutoring', 'Real-time feedback'],
-      color: '#06b6d4'
+      color: '#06b6d4',
+      // Add your project screenshot here
+      image: '/images/dashboard1.png' // Replace with your actual image path
     },
     {
       title: 'SuprisalGuard',
@@ -89,17 +98,19 @@ const About = () => {
       status: 'Research',
       icon: Shield,
       highlights: ['AI Safety', 'Real-time monitoring', 'Novel framework'],
-      color: '#a855f7'
+      color: '#a855f7',
+      image: '/images/Dashboard Demo.png' // Replace with your actual image path
     },
     {
-      title: 'Veritas',
+      title: 'Verity',
       description: 'AI-powered fact-checking system with multi-source verification, credibility scoring, and automated claim extraction from text and media. Achieved 87% accuracy on benchmark datasets.',
       tech: ['Python', 'NLP', 'Web Scraping', 'React', 'ML Models'],
       github: 'https://github.com/AndyH2007',
       status: 'Active',
       icon: Target,
       highlights: ['87% accuracy', 'Multi-source', 'Auto-extraction'],
-      color: '#10b981'
+      color: '#10b981',
+      image: '/images/Verity.png' // Replace with your actual image path
     }
   ];
 
@@ -222,16 +233,52 @@ const About = () => {
       padding: '2rem',
       border: '1px solid rgba(255, 255, 255, 0.1)',
       transition: 'all 0.3s ease',
-      marginBottom: '2rem'
+      marginBottom: '2rem',
+      display: 'flex',
+      gap: '2rem',
+      alignItems: 'start'
+    },
+    experienceImage: {
+      width: '200px',
+      height: '150px',
+      borderRadius: '0.75rem',
+      objectFit: 'cover',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      flexShrink: 0
+    },
+    experienceContent: {
+      flex: 1
     },
     projectCard: {
       background: 'rgba(255, 255, 255, 0.05)',
       backdropFilter: 'blur(10px)',
       borderRadius: '1rem',
-      padding: '2rem',
+      padding: '0',
       border: '1px solid rgba(255, 255, 255, 0.1)',
       transition: 'all 0.3s ease',
-      height: '100%'
+      height: '100%',
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    projectImageContainer: {
+      width: '100%',
+      height: '200px',
+      overflow: 'hidden',
+      position: 'relative',
+      background: 'rgba(0, 0, 0, 0.3)'
+    },
+    projectImage: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      transition: 'transform 0.5s ease'
+    },
+    projectContent: {
+      padding: '2rem',
+      flex: 1,
+      display: 'flex',
+      flexDirection: 'column'
     },
     skillCard: {
       background: 'rgba(255, 255, 255, 0.05)',
@@ -383,46 +430,59 @@ const About = () => {
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
-                      <div>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.5rem', color: exp.color }}>
-                          {exp.title}
-                        </h3>
-                        <p style={{ color: '#94a3b8', fontSize: '1rem' }}>{exp.org}</p>
-                      </div>
-                      <div style={{ textAlign: 'right' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#94a3b8', fontSize: '0.9rem' }}>
-                          <Calendar size={16} />
-                          <span>{exp.period}</span>
+                    {exp.image && (
+                      <img 
+                        src={exp.image} 
+                        alt={exp.title}
+                        style={styles.experienceImage}
+                        onError={(e) => {
+                          // Hide image if it fails to load
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                    )}
+                    <div style={styles.experienceContent}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
+                        <div>
+                          <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.5rem', color: exp.color }}>
+                            {exp.title}
+                          </h3>
+                          <p style={{ color: '#94a3b8', fontSize: '1rem' }}>{exp.org}</p>
                         </div>
-                        <span style={{
-                          ...styles.badge,
-                          background: `${exp.color}20`,
-                          color: exp.color,
-                          border: `1px solid ${exp.color}50`,
-                          marginTop: '0.5rem'
-                        }}>
-                          {exp.type}
-                        </span>
-                      </div>
-                    </div>
-                    <p style={{ color: '#e2e8f0', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-                      {exp.description}
-                    </p>
-                    <div>
-                      {exp.skills.map((skill, idx) => (
-                        <span
-                          key={idx}
-                          style={{
+                        <div style={{ textAlign: 'right' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#94a3b8', fontSize: '0.9rem' }}>
+                            <Calendar size={16} />
+                            <span>{exp.period}</span>
+                          </div>
+                          <span style={{
                             ...styles.badge,
-                            background: 'rgba(6, 182, 212, 0.15)',
-                            color: '#06b6d4',
-                            border: '1px solid rgba(6, 182, 212, 0.3)'
-                          }}
-                        >
-                          {skill}
-                        </span>
-                      ))}
+                            background: `${exp.color}20`,
+                            color: exp.color,
+                            border: `1px solid ${exp.color}50`,
+                            marginTop: '0.5rem'
+                          }}>
+                            {exp.type}
+                          </span>
+                        </div>
+                      </div>
+                      <p style={{ color: '#e2e8f0', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                        {exp.description}
+                      </p>
+                      <div>
+                        {exp.skills.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            style={{
+                              ...styles.badge,
+                              background: 'rgba(6, 182, 212, 0.15)',
+                              color: '#06b6d4',
+                              border: '1px solid rgba(6, 182, 212, 0.3)'
+                            }}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -440,126 +500,153 @@ const About = () => {
                   key={index}
                   style={styles.projectCard}
                   onMouseEnter={(e) => {
+                    setHoveredProject(index);
                     e.currentTarget.style.transform = 'translateY(-10px)';
                     e.currentTarget.style.borderColor = project.color;
                     e.currentTarget.style.boxShadow = `0 25px 50px ${project.color}20`;
                   }}
                   onMouseLeave={(e) => {
+                    setHoveredProject(null);
                     e.currentTarget.style.transform = 'translateY(0)';
                     e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'start', gap: '1rem', marginBottom: '1rem' }}>
-                    <div style={{
-                      width: '3.5rem',
-                      height: '3.5rem',
-                      borderRadius: '1rem',
-                      background: `${project.color}20`,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      border: `1px solid ${project.color}30`,
-                      flexShrink: 0
-                    }}>
-                      <Icon size={28} color={project.color} />
+                  {project.image && (
+                    <div style={styles.projectImageContainer}>
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        style={{
+                          ...styles.projectImage,
+                          transform: hoveredProject === index ? 'scale(1.1)' : 'scale(1)'
+                        }}
+                        onError={(e) => {
+                          // Replace with placeholder gradient if image fails
+                          e.target.parentElement.style.background = `linear-gradient(135deg, ${project.color}40, ${project.color}10)`;
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                      <div style={{
+                        position: 'absolute',
+                        top: '1rem',
+                        right: '1rem',
+                        background: `${project.color}20`,
+                        backdropFilter: 'blur(10px)',
+                        padding: '0.5rem 1rem',
+                        borderRadius: '9999px',
+                        border: `1px solid ${project.color}50`,
+                        color: project.color,
+                        fontSize: '0.75rem',
+                        fontWeight: '600'
+                      }}>
+                        {project.status}
+                      </div>
                     </div>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
+                  )}
+                  
+                  <div style={styles.projectContent}>
+                    <div style={{ display: 'flex', alignItems: 'start', gap: '1rem', marginBottom: '1rem' }}>
+                      <div style={{
+                        width: '3.5rem',
+                        height: '3.5rem',
+                        borderRadius: '1rem',
+                        background: `${project.color}20`,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        border: `1px solid ${project.color}30`,
+                        flexShrink: 0
+                      }}>
+                        <Icon size={28} color={project.color} />
+                      </div>
+                      <div style={{ flex: 1 }}>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.5rem' }}>
                           {project.title}
                         </h3>
-                        <span style={{
-                          ...styles.badge,
-                          background: `${project.color}20`,
-                          color: project.color,
-                          border: `1px solid ${project.color}50`
-                        }}>
-                          {project.status}
-                        </span>
                       </div>
                     </div>
-                  </div>
-                  
-                  <p style={{ color: '#e2e8f0', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-                    {project.description}
-                  </p>
+                    
+                    <p style={{ color: '#e2e8f0', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                      {project.description}
+                    </p>
 
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    {project.highlights.map((highlight, idx) => (
-                      <span
-                        key={idx}
-                        style={{
-                          ...styles.badge,
-                          background: 'rgba(16, 185, 129, 0.15)',
-                          color: '#10b981',
-                          border: '1px solid rgba(16, 185, 129, 0.3)'
-                        }}
-                      >
-                        ✓ {highlight}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div style={{ marginBottom: '1.5rem' }}>
-                    {project.tech.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        style={{
-                          ...styles.badge,
-                          background: 'rgba(255, 255, 255, 0.08)',
-                          border: '1px solid rgba(255, 255, 255, 0.15)',
-                          color: '#e2e8f0'
-                        }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '0.5rem',
-                          color: project.color,
-                          textDecoration: 'none',
-                          fontWeight: '600',
-                          fontSize: '0.95rem',
-                          transition: 'color 0.2s ease'
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.color = '#e2e8f0'}
-                        onMouseLeave={(e) => e.currentTarget.style.color = project.color}
-                      >
-                        Live Demo <ExternalLink size={16} />
-                      </a>
-                    )}
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '0.5rem',
-                          color: '#94a3b8',
-                          textDecoration: 'none',
-                          fontWeight: '600',
-                          fontSize: '0.95rem',
-                          transition: 'color 0.2s ease'
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.color = project.color}
-                        onMouseLeave={(e) => e.currentTarget.style.color = '#94a3b8'}
-                      >
-                        <Github size={16} /> Code
-                      </a>
-                    )}
+                    <div style={{ marginBottom: '1.5rem' }}>
+                      {project.highlights.map((highlight, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            ...styles.badge,
+                            background: 'rgba(16, 185, 129, 0.15)',
+                            color: '#10b981',
+                            border: '1px solid rgba(16, 185, 129, 0.3)'
+                          }}
+                        >
+                          ✓ {highlight}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div style={{ marginBottom: '1.5rem' }}>
+                      {project.tech.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            ...styles.badge,
+                            background: 'rgba(255, 255, 255, 0.08)',
+                            border: '1px solid rgba(255, 255, 255, 0.15)',
+                            color: '#e2e8f0'
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            color: project.color,
+                            textDecoration: 'none',
+                            fontWeight: '600',
+                            fontSize: '0.95rem',
+                            transition: 'color 0.2s ease'
+                          }}
+                          onMouseEnter={(e) => e.currentTarget.style.color = '#e2e8f0'}
+                          onMouseLeave={(e) => e.currentTarget.style.color = project.color}
+                        >
+                          Live Demo <ExternalLink size={16} />
+                        </a>
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            color: '#94a3b8',
+                            textDecoration: 'none',
+                            fontWeight: '600',
+                            fontSize: '0.95rem',
+                            transition: 'color 0.2s ease'
+                          }}
+                          onMouseEnter={(e) => e.currentTarget.style.color = project.color}
+                          onMouseLeave={(e) => e.currentTarget.style.color = '#94a3b8'}
+                        >
+                          <Github size={16} /> Code
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               );
