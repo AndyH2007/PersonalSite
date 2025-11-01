@@ -54,11 +54,11 @@ const About = () => {
     },
     {
       title: 'Software Developer and Co-founder',
-      org: 'Startup - LearnOlympiad',
+      org: 'LearnOlympiad',
       period: '2024 - Present',
-      type: 'Research',
+      type: 'Startup',
       description: 'Built interactive dashboards and skill trackers with React and Node.js to support student Olympiad progress tracking. Developed AI-driven problem generation tools and collaborated across frontend and backend development in a fast-paced startup environment, conducting code reviews and establishing best practices.',
-      skills: ['Python', 'Statistics', 'Finance', 'ML', 'Pandas', 'NumPy'],
+      skills: ['React', 'Python', 'Node.js', 'OpenAI API', 'Firebase', 'Render'],
       icon: TrendingUp,
       color: '#a855f7',
       image: '/images/skilltrees.png' // Replace with your actual image path
