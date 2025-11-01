@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Mail, Phone, MapPin, Code, Trophy, BookOpen, Users, Heart, Gamepad2, Dumbbell, Target, ExternalLink, Star, Award, Brain, TrendingUp, Shield, Sparkles, Linkedin, Calendar, Briefcase, Wrench, GraduationCap } from 'lucide-react';
+import { Github, Mail, Phone, MapPin, Code, Trophy, BookOpen, Users, Heart, Gamepad2, Code2, Dumbbell, Target, ExternalLink, Star, Award, Brain, TrendingUp, Shield, Sparkles, Linkedin, Calendar, Briefcase, Wrench, GraduationCap } from 'lucide-react';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('experience');
@@ -59,7 +59,7 @@ const About = () => {
       type: 'Startup',
       description: 'Built interactive dashboards and skill trackers with React and Node.js to support student Olympiad progress tracking. Developed AI-driven problem generation tools and collaborated across frontend and backend development in a fast-paced startup environment, conducting code reviews and establishing best practices.',
       skills: ['React', 'Python', 'Node.js', 'OpenAI API', 'Firebase', 'Render'],
-      icon: TrendingUp,
+      icon: Code2,
       color: '#a855f7',
       image: '/images/skilltrees.png' // Replace with your actual image path
     },
@@ -79,7 +79,7 @@ const About = () => {
   const projects = [
     {
       title: 'LearnOlympiad SaaS',
-      description: 'Full-stack STEM learning platform with AI-powered tutoring, personalized dashboards, and automated problem generation. Serves 500+ active users with 95% positive feedback.',
+      description: 'Full-stack STEM learning platform with AI-powered tutoring, personalized dashboards, and automated problem generation. Serves 50+ active users with 95% positive feedback.',
       tech: ['React', 'Python', 'Node.js', 'OpenAI API', 'Firebase', 'Render'],
       link: 'https://learnolympiad.com',
       github: 'https://github.com/AndyH2007',
@@ -104,7 +104,8 @@ const About = () => {
     {
       title: 'Verity',
       description: 'AI-powered fact-checking system with multi-source verification, credibility scoring, and automated claim extraction from text and media. Achieved 87% accuracy on benchmark datasets.',
-      tech: ['Python', 'NLP', 'Web Scraping', 'React', 'ML Models'],
+      tech: ['Python', 'NLP', 'Web Scraping', 'API Endpoints', 'PostgreSQL'],
+      link: 'https://devpost.com/software/verity-isrt5e',
       github: 'https://github.com/AndyH2007',
       status: 'Active',
       icon: Target,
@@ -129,7 +130,7 @@ const About = () => {
     { title: 'USACO Gold', icon: Trophy, color: '#EAB308', desc: 'Competitive Programming', year: '2024' },
     { title: 'AIME Qualifier', icon: Target, color: '#3B82F6', desc: 'Mathematics', year: '2024' },
     { title: 'Google Code Jam', icon: Code, color: '#10B981', desc: 'Algorithm Competition', year: '2024' },
-    { title: 'Debate Nationals', icon: Users, color: '#A855F7', desc: 'Public Forum', year: '2023' },
+    { title: 'Debate Nationals', icon: Users, color: '#A855F7', desc: 'Lincoln Douglas', year: '2023' },
     { title: '#56 US Debater', icon: Star, color: '#EF4444', desc: 'National Ranking', year: '2023' },
     { title: 'Regional Robotics Champion', icon: Award, color: '#F97316', desc: 'FRC/FTC', year: '2022' }
   ];
