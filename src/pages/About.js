@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Mail, Phone, MapPin, Code, Trophy, BookOpen, Users, Heart, Gamepad2, Dumbbell, Target, ExternalLink, Star, Award, Brain, TrendingUp, Shield, Sparkles, Linkedin, Calendar, Briefcase, GraduationCap } from 'lucide-react';
+import { Github, Mail, Phone, MapPin, Code, Trophy, BookOpen, Users, Heart, Gamepad2, Dumbbell, Target, ExternalLink, Star, Award, Brain, TrendingUp, Shield, Sparkles, Linkedin, Calendar, Briefcase, Wrench, GraduationCap } from 'lucide-react';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('experience');
@@ -34,10 +34,10 @@ const About = () => {
       title: 'Technical Consultant',
       org: 'Target',
       period: '2025 Jul - 2025 Sep',
-      type: 'Hardware',
-      description: 'Investigating computational models of neural networks and brain-inspired machine learning architectures. Focus on understanding how biological neural systems process information and applying those insights to artificial intelligence.',
-      skills: ['PyTorch', 'Neuroscience', 'Deep Learning', 'Troubleshooting', 'Communication'],
-      icon: Brain,
+      type: 'Contract',
+      description: 'Supported 50+ POS terminals, network gear, and in-store hardware; minimized downtime for retail ops. Diagnosed and documented system issues for team knowledge sharing. Partnered with AT&T techs and cross-functional teams to resolve customer device problems (network connectivity, Wi-Fi config, hardware diagnostics)',
+      skills: ['Customer Support', 'Hardware Diagnostics', 'Networking', 'Troubleshooting', 'Communication'],
+      icon: Wrench,
       color: '#d60d0dff',
       image: '/images/target.jpg' // Replace with your actual image path
     },
