@@ -136,10 +136,10 @@ const About = () => {
   ];
 
   const interests = [
-    { name: 'Neural Systems Research', icon: Brain, desc: 'Computational neuroscience and brain-inspired AI' },
-    { name: 'Quant Research', icon: TrendingUp, desc: 'Algorithmic trading and financial modeling' },
+    { name: 'Neural + Quant Research', icon: Brain, desc: 'Computational neuroscience and data based trading analysis' },
+    { name: 'Clash Royale', icon: TrendingUp, desc: 'Game strategy and elixir counting' },
     { name: 'Poker Strategy', icon: Gamepad2, desc: 'Game theory and probabilistic decision making' },
-    { name: 'Fitness', icon: Dumbbell, desc: 'Powerlifting and athletic optimization' },
+    { name: 'Fitness', icon: Dumbbell, desc: 'Weightlifting and athletic optimization' },
     { name: 'Open Source', icon: Code, desc: 'Contributing to AI/ML projects' },
     { name: 'Community Service', icon: Heart, desc: 'STEM education and mentorship' }
   ];
