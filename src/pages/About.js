@@ -116,15 +116,44 @@ const About = () => {
   ];
 
   const skills = [
-    { name: 'Python', level: 95, category: 'Language', projects: 15, years: 4 },
-    { name: 'React', level: 92, category: 'Framework', projects: 8, years: 2 },
-    { name: 'JavaScript', level: 90, category: 'Language', projects: 12, years: 3 },
-    { name: 'Machine Learning', level: 87, category: 'AI/ML', projects: 6, years: 2 },
-    { name: 'Data Analysis', level: 89, category: 'Analytics', projects: 10, years: 3 },
-    { name: 'Java', level: 88, category: 'Language', projects: 7, years: 3 },
-    { name: 'C++', level: 85, category: 'Language', projects: 5, years: 2 },
-    { name: 'Swift', level: 82, category: 'Language', projects: 3, years: 1 }
-  ];
+  // Core languages
+  { name: 'Python', level: 95, category: 'Language', projects: 20, years: 4 },
+  { name: 'TypeScript', level: 92, category: 'Language', projects: 14, years: 3 },
+  { name: 'JavaScript', level: 90, category: 'Language', projects: 18, years: 4 },
+  { name: 'Java', level: 88, category: 'Language', projects: 9, years: 3 },
+  { name: 'C++', level: 86, category: 'Language', projects: 7, years: 3 },
+
+  // Frontend
+  { name: 'React', level: 93, category: 'Frontend', projects: 12, years: 3 },
+  { name: 'Next.js', level: 88, category: 'Frontend', projects: 6, years: 2 },
+  { name: 'Tailwind CSS', level: 90, category: 'Frontend', projects: 10, years: 3 },
+  { name: 'React Native (Expo)', level: 82, category: 'Mobile', projects: 3, years: 1 },
+
+  // Backend & APIs
+  { name: 'Node.js / Express', level: 90, category: 'Backend', projects: 10, years: 3 },
+  { name: 'FastAPI', level: 92, category: 'Backend', projects: 8, years: 2 },
+  { name: 'REST API Design', level: 91, category: 'Backend', projects: 12, years: 3 },
+
+  // Databases & data
+  { name: 'PostgreSQL', level: 88, category: 'Database', projects: 9, years: 3 },
+  { name: 'MySQL / TypeORM', level: 82, category: 'Database', projects: 5, years: 2 },
+  { name: 'Firebase (Auth/Firestore/Storage)', level: 87, category: 'Database', projects: 7, years: 3 },
+  { name: 'DynamoDB', level: 78, category: 'Database', projects: 3, years: 1 },
+
+  // Cloud, DevOps & Infra
+  { name: 'AWS (Lambda, API Gateway, S3, RDS)', level: 86, category: 'Cloud', projects: 7, years: 2 },
+  { name: 'Docker', level: 88, category: 'DevOps', projects: 10, years: 3 },
+  { name: 'GitHub Actions (CI/CD)', level: 84, category: 'DevOps', projects: 6, years: 2 },
+  { name: 'Linux / Bash', level: 85, category: 'Systems', projects: 12, years: 4 },
+
+  // Testing & quality
+  { name: 'PyTest / unittest', level: 86, category: 'Testing', projects: 8, years: 3 },
+  { name: 'JUnit', level: 82, category: 'Testing', projects: 5, years: 2 },
+
+  // AI/ML (applied)
+  { name: 'Machine Learning (sklearn/PyTorch)', level: 85, category: 'AI/ML', projects: 6, years: 2 },
+  { name: 'LLM Integration (tools/agents)', level: 80, category: 'AI/ML', projects: 4, years: 2 }
+];
 
   const achievements = [
     { title: 'USACO Gold', icon: Trophy, color: '#EAB308', desc: 'Competitive Programming', year: '2024' },
