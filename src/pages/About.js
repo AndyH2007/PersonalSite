@@ -57,7 +57,7 @@ const About = () => {
       org: 'Startup - LearnOlympiad',
       period: '2024 - Present',
       type: 'Research',
-      description: 'Developing algorithmic trading strategies and financial models using statistical analysis and machine learning. Implemented backtesting frameworks and analyzed market microstructure.',
+      description: 'Built interactive dashboards and skill trackers with React and Node.js to support student Olympiad progress tracking. Developed AI-driven problem generation tools and collaborated across frontend and backend development in a fast-paced startup environment, conducting code reviews and establishing best practices.',
       skills: ['Python', 'Statistics', 'Finance', 'ML', 'Pandas', 'NumPy'],
       icon: TrendingUp,
       color: '#a855f7',
@@ -80,12 +80,12 @@ const About = () => {
     {
       title: 'LearnOlympiad SaaS',
       description: 'Full-stack STEM learning platform with AI-powered tutoring, personalized dashboards, and automated problem generation. Serves 500+ active users with 95% positive feedback.',
-      tech: ['React', 'Python', 'FastAPI', 'OpenAI API', 'PostgreSQL', 'AWS', 'Docker'],
+      tech: ['React', 'Python', 'Node.js', 'OpenAI API', 'Firebase', 'Render'],
       link: 'https://learnolympiad.com',
       github: 'https://github.com/AndyH2007',
       status: 'Live',
       icon: Sparkles,
-      highlights: ['500+ users', 'AI tutoring', 'Real-time feedback'],
+      highlights: ['50+ users', 'AI tutoring', 'Real-time feedback'],
       color: '#06b6d4',
       // Add your project screenshot here
       image: '/images/dashboard1.png' // Replace with your actual image path
